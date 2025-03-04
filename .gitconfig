@@ -1,0 +1,7 @@
+[http]
+	postBuffer = 157286400
+[user]
+	name = SMANahian
+	email = smanahian123@gmail.com
+[credential]
+	helper = store
