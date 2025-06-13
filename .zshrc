@@ -113,10 +113,31 @@ source $ZSH/oh-my-zsh.sh
 source ~/GitHub/znap/znap.zsh  # Start Znap
 
 
-source ~/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-source ~/GitHub/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/GitHub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# [[ -r ~/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh ]] ||
+#     git clone --depth 1 -- \
+#         https://github.com/marlonrichert/zsh-autocomplete.git ~/GitHub/zsh-autocomplete
+# source ~/GitHub/zsh-autocomplete/zsh-autocomplete.plugin.zsh
+znap source marlonrichert/zsh-autocomplete
+
+zle -N insert-unambiguous-or-complete
+zle -N menu-search
+zle -N recent-paths
+
+# [[ -r ~/GitHub/zsh-autosuggestions/zsh-autosuggestions.zsh ]] ||
+#     git clone --depth 1 -- \
+#         https://github.com/zsh-users/zsh-autosuggestions.git ~/GitHub/zsh-autosuggestions
+# source ~/GitHub/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# [[ -r ~/GitHub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] ||
+#     git clone --depth 1 -- \
+#         https://github.com/zsh-users/zsh-syntax-highlighting.git ~/GitHub/zsh-syntax-highlighting
+# source ~/GitHub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # source ~/GitHub/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-history-substring-search
+znap source zsh-users/zsh-syntax-highlighting
+
 
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
