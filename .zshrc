@@ -149,7 +149,10 @@ ulimit -s unlimited
 
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="/opt/lampp/bin:$PATH"
-source /etc/profile.d/modules.sh
+# source /etc/profile.d/modules.sh
 export PATH="/home/smanahian/GitHub/BLANT/libwayne/bin:$PATH"
 export LIBWAYNE_HOME="/home/smanahian/GitHub/BLANT/libwayne"
 export PATH="/home/smanahian/.local/share/gem/ruby/3.3.0/bin:$PATH"
+source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+chruby ruby-3.4.1
