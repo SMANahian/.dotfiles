@@ -153,6 +153,10 @@ export PATH="/opt/lampp/bin:$PATH"
 export PATH="/home/smanahian/GitHub/BLANT/libwayne/bin:$PATH"
 export LIBWAYNE_HOME="/home/smanahian/GitHub/BLANT/libwayne"
 export PATH="/home/smanahian/.local/share/gem/ruby/3.3.0/bin:$PATH"
-source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
-source /opt/homebrew/opt/chruby/share/chruby/auto.sh
-chruby ruby-3.4.1
+if [[ "$(uname -s)" = "Darwin" ]]; then
+    if [[ -d /opt/homebrew/opt/chruby/share/chruby ]]; then
+        source /opt/homebrew/opt/chruby/share/chruby/chruby.sh
+        source /opt/homebrew/opt/chruby/share/chruby/auto.sh
+        chruby ruby-3.4.1
+    fi
+fi
